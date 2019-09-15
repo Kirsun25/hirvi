@@ -19,10 +19,15 @@ class Config
      * сейчас через него инициализируются константы, но потом можно сделать больше
      *
      * @param array $config
+     * @throws
      */
     public function init(array $config)
     {
-
+        \di\App::get()->set('test', [
+            'class' => \Controller\Test::class,
+            0 => 'Первый параметр',
+            1 => 'Второй параметр'
+        ]);
     }
 
 }

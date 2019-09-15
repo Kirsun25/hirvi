@@ -8,6 +8,8 @@
 
 namespace Controller;
 
+use di\App;
+
 class Testik extends \Controller
 {
     /**
@@ -18,6 +20,19 @@ class Testik extends \Controller
         return $this->view('page', ['date' => date('c')]);
     }
 
+    public function actionTest()
+    {
+        $var = App::get()->get('test')->test();
+
+        return $this->view('temp', ['var' => $var]);
+    }
+
+    public function actionNew()
+    {
+        $var = App::get()->get('test')->test();
+
+        return $this->view('temp', ['var' => $var]);
+    }
 
     /**
      * @param $pr
